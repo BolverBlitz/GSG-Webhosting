@@ -5,7 +5,7 @@ This repo will create a simple express based webserver you can use on any system
 Clone this repo
 Check if NodeJS & npm are installed    
 run `npm i`  
-rename .env.example to .env
+rename .env.example to .env  
 run node ./index.js  
 
 ## .env
