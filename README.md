@@ -17,5 +17,8 @@ behindproxy - You can choose `0` or `1`, use 1 if you are behind cloudflare or a
 enableplugins - You can choose `true` or `false` this will load plugins if you need a REST Backend.  
 webport - The webserver port this app should lisen to.  
 
+## Plugins
+For more informations about plugins see https://github.com/EBG-PW/EBG-API-Plugins/blob/master/README.md  
+
 ## To-DO
 - Add HTTPS support.  
