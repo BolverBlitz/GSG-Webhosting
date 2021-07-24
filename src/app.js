@@ -20,7 +20,7 @@ app.set('trust proxy', process.env.behindproxy);
 
 if(process.env.environment === "dev"){
   if(process.env.log === "true"){
-    const accessLogStream = rfs.createStream(`${rootpath}access-dev.log`, {
+    const accessLogStream = rfs.createStream(`access-dev.log`, {
       size: process.env.maxlogsize,  
       interval: process.env.maxlogage, 
       compress: "gzip"
@@ -31,7 +31,7 @@ if(process.env.environment === "dev"){
   }
 }else{
   if(process.env.log === "true"){
-    const accessLogStream = rfs.createStream(`${rootpath}access.log`, {
+    const accessLogStream = rfs.createStream(`access.log`, {
       size: process.env.maxlogsize,  
       interval: process.env.maxlogage, 
       compress: "gzip"
