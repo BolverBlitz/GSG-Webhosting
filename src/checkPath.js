@@ -16,7 +16,7 @@ if(fs.existsSync(`${rootpath}/block.list`)) {
 }
 
 /**
- * 
+ * Checks if the requested path is listed in block.list, if so returns false and prevents file access.
  * @param {String} URL 
  * @returns {boolean}
  */
