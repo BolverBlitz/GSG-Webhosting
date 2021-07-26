@@ -7,11 +7,15 @@ const path = require('path');
 const rootpath = path.join(__dirname, '../');
 const bodyParser = require('body-parser');
 const rfs = require('rotating-file-stream')
-let api;
-
 const middlewares = require('./middlewares');
+let api, cP;
+
 if(process.env.enableplugins === "true"){
   api = require('./api');
+}
+
+if(process.env.enableblocking === "true"){
+  cP = require('./checkPath');
 }
 
 
@@ -54,6 +58,18 @@ app.use(expressCspHeader({
   }
 }));
 app.use(bodyParser.urlencoded({ extended: false }))
+
+if(process.env.enableblocking === "true"){
+  app.use(function notFound(req, res, next) {
+    if(!cP.checkPath(req.url)){
+      next();
+    }else{
+      res.status(403);
+      const error = new Error(`Access denied - ${req.originalUrl}`);
+      next(error);
+    }
+  });
+}
 
 app.use('/', express.static(`${rootpath}www-public`));
 
