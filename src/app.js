@@ -60,7 +60,7 @@ app.use(expressCspHeader({
 app.use(bodyParser.urlencoded({ extended: false }))
 
 if(process.env.enableblocking === "true"){
-  app.use(function notFound(req, res, next) {
+  app.use(function checkblock(req, res, next) {
     if(!cP.checkPath(req.url)){
       next();
     }else{
