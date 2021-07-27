@@ -15,7 +15,7 @@ maxlogsize - The size of the logfile (Rotating logfile).
 maxlogage - The time when the logfile should rotate.  
 behindproxy - You can choose `0` or `1`, use 1 if you are behind cloudflare or apache/nginx proxy.  
 enableplugins - You can choose `true` or `false` this will load plugins if you need a REST Backend.  
-enableblocking - You can choose `true` or `false` this will prevent file acces to the files listed in `block.list`  
+enableblocking - You can choose `true` or `false` this will prevent file acces to the files listed in `block.list` (example: /index.html)  
 webport - The webserver port this app should lisen to.  
 
 ## Plugins
