@@ -27,5 +27,17 @@ You need a certificate and privat key.
 Put those 2 files into the ssl folder with the name `cert.cert` and `cert.key`.  
 Edit .env to enable https.  
 
+## Benchmarks
+Requests per seconds:  
+HTTP: ~3000 reg/sec  
+HTTPs: ~ 350 reg/sec  
+  
+Utilization during the benchmark was ~9% CPU  
+Using only 25% of one Ryzen 3950X core can serve ~350 reg/sec over HTTP and ~70 reg/sec over HTTPS.  
+  
+Test System:  
+CPU: Ryzen 3950X  
+RAM: 64GB @ 3600mhz
+
 ## To-DO
 - Add HTTPS support.  
